@@ -1,33 +1,131 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+     :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+    background: #071012;
+}
+
+.map {
+    width: 100%;
+    height: 584px;
+    border-radius: 0;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+    scale: 2;
+    animation: map linear;
+}
+
+.map-section,
+.map {
+    animation-timeline: view();
+}
+
+@keyframes map {
+    to {
+        scale: 0;
+        border-radius: 25px;
+    }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+@font-face {
+    font-family: 'Sashaoluu';
+    src: url('/fonts/Sashaoluu/Sashaoluu_Uzana.otf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+.gradient-bg {
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 50%, rgba(252, 252, 70, 1) 100%);
+}
+
+.glow {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+}
+
+.glow-text {
+    text-shadow: -4 2 5px #2F00FF, -2 -4 5px #DD00ff, 2 4 5px #FFFF00, 2 4 5px #00FF00;
+}
+
+.map-text {
+    position: relative;
+    width: fit-content;
+    overflow: hidden;
+    backdrop-filter: blur(64px);
+    z-index: 2;
+}
+
+.map-text::before {
+    content: '';
+    position: absolute;
+    margin-right: 500px;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    border-radius: 100px;
+    z-index: -1;
+    filter: blur(50px);
+    opacity: 50%;
+    background-color: #00FF00C8;
+}
+
+.map-text::after {
+    content: '';
+    position: absolute;
+    margin-left: 90%;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    border-radius: 100px;
+    z-index: -1;
+    filter: blur(50px);
+    opacity: 50%;
+    background-color: #0090F8;
 }
