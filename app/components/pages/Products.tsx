@@ -2,7 +2,7 @@ import Card from "./attributs/Card";
 
 export default function Products() {
   return (
-    <div className="flex justify-center items-start flex-col px-[5%] sm:px-[10%] w-[100%]">
+    <div className="flex justify-center items-start flex-col px-[5%] sm:px-[10%] w-[100%] max-h-screen">
       <h1 className="text-shadow-glow text-[94px] sm:text-[124px] md:text-[116px] lg:text-[128px] font-sashaoluu text-nowrap opacity-[64%]">
         TOVARU
       </h1>
