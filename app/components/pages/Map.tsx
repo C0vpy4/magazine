@@ -10,11 +10,11 @@ export default function Map() {
           src="https://yandex.ru/map-widget/v1/?um=constructor%3Abffa6cc619a20cd5c2413bd999cd3d3f0956a9aae28e4e2f08d1e65b68dc8f06&amp;source=constructor"
           width=""
           height=""
-          className=" drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] map w-full h-[584px] "
+          className="z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] map w-full h-[584px] "
 
           frameBorder="0"
         ></iframe>
-        <div className="map-text bg-[#333] text-white font-comfortaa flex items-center justify-center rounded-[25px]">
+        <div className=" z-0 map-text bg-[#333] text-white font-comfortaa flex items-center justify-center rounded-[25px]">
           <h1 className=" w-[100%] text-[32px] md:text-[16px] px-[30px] py-[10px] sm:text-[8px] text-[6px] font-comfortaa text-nowrap opacity-[64%] info-block ">
             МКАД, 41-й километр, 4, стр. 27, Москва Ж12/5
             <br />
